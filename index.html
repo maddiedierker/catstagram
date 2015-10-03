@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/application.css">
+
+    <title>catstagram</title>
+  </head>
+  <body ng-app="catstagram">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">catstagram</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+
+
+        <div class="panel panel-primary" ng-repeat="cat in cats">
+          <cat-info info="cat"></cat-info>
+
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title">{{ cat.username }}</h3>
+          </div>
+          <div class="panel-body">
+            <p class="name">{{ cat.name }}</p>
+            <p class="age">{{ cat.age }}</p>
+            <p class="breed">{{ cat.breed }}</p>
+            <span class="active">Likes <span class="likes badge" ng-click="addOne($index)">{{ cat.likes }}</span></span>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="js/application.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Directives -->
+    <script src="js/directives/catInfo.js"></script>
+
+  </body>
+</html>
