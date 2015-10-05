@@ -1,1 +1,1 @@
-var app = angular.module("catstagram", []);
+var app = angular.module("catstagram", ['ui.router']);
