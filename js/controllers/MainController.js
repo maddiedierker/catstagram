@@ -1,25 +1,22 @@
-app.controller('MainController', ['$scope', function($scope) {
-  
-  $scope.title = "catstagram";
+app.controller('MainController', ['$scope', 'posts', function($scope, posts) {
 
-  $scope.cats = [
-    {
-      username: "@spoons",
-      name: "Spooky",
-      age: 13,
-      breed: "tuxedo",
-      likes: 0
-    },
-    {
-      username: "@beal",
-      name: "Bill",
-      age: 11,
-      breed: "tuxedo",
-      likes: 0
-    }
-  ];
+  $scope.posts = posts.posts;
 
-  $scope.addOne = function(index) {
-    $scope.cats[index].likes += 1;
+  $scope.addLike = function(index) {
+    $scope.posts[index].likes += 1;
+  };
+
+  $scope.addPost = function() {
+    if (!$scope.url || $scope.url === '') { return; }
+
+    $scope.posts.push({
+      username: "@madelynkasula",
+      url: $scope.url,
+      postContent: $scope.postContent,
+      likes: 0
+    });
+
+    $scope.url = '';
+    $scope.postContent = '';
   };
 }]);
